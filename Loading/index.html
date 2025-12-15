@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Loader - Short Bars</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        'brand-purple': '#5e2d86',
+                        'brand-yellow': '#fbbf24', 
+                    },
+                    boxShadow: { 
+                        'neon': '0 0 10px rgba(147, 51, 234, 0.3)' 
+                    },
+                    keyframes: {
+                        'wave': {
+                            '0%, 100%': { transform: 'scaleY(1)', opacity: '0.5' },
+                            '50%': { transform: 'scaleY(2.2)', opacity: '1', boxShadow: '0 0 20px rgba(168, 85, 247, 0.6)' },
+                        },
+                        'wave-yellow': {
+                            '0%, 100%': { transform: 'scaleY(1)', opacity: '0.5' },
+                            '50%': { transform: 'scaleY(2.2)', opacity: '1', boxShadow: '0 0 20px rgba(251, 191, 36, 0.6)' },
+                        }
+                    },
+                    animation: {
+                        'wave': 'wave 1.2s ease-in-out infinite',
+                        'wave-yellow': 'wave-yellow 1.2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#FAF4FF] to-[#FBDECA]">
+
+    <div class="flex gap-2">
+        <div class="w-2 h-5 bg-brand-purple rounded-full shadow-neon animate-wave" style="animation-delay: 0s"></div>
+        
+        <div class="w-2 h-5 bg-brand-yellow rounded-full shadow-neon animate-wave-yellow" style="animation-delay: 0.1s"></div>
+        
+        <div class="w-2 h-5 bg-brand-purple rounded-full shadow-neon animate-wave" style="animation-delay: 0.2s"></div>
+        
+        <div class="w-2 h-5 bg-brand-yellow rounded-full shadow-neon animate-wave-yellow" style="animation-delay: 0.3s"></div>
+        
+        <div class="w-2 h-5 bg-brand-purple rounded-full shadow-neon animate-wave" style="animation-delay: 0.4s"></div>
+    </div>
+
+</body>
+</html>
